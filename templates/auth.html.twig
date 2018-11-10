@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+ {{ parent() }}
+ {{ encore_entry_link_tags("app") }}
+{% endblock %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <h2>auth</h2>
+    {% block form %}
+    <div class="row">
+    <div class="form-wrapper bg-light p-2 col col-md-8 offset-md-2 col-lg-4 offset-lg-4">
+    <div class="tabs d-flex w-100 text-dark">
+      <a href="/login" class="tab {% if login == true %} active {% endif %}d-flex align-items-center justify-content-center flex-fill text-center text-dark">快速登陆</a>
+      <a href="/register" class="tab {% if login == false %} active {% endif %}d-flex align-items-center justify-content-center flex-fill text-center text-dark">快速注册</a>
+    </div>
+      
+    {% endblock %}
+    </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{{ encore_entry_script_tags("app") }}
+{% endblock %}

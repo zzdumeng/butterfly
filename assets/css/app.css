@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    background-color: lightgray;
+    background: center/cover url('/img/bg.jpeg');
+}
+.form-wrapper {
+    color: white;
+    border: solid 1px lightgray;
+}
+
+.tabs {
+    height: 50px;
+    background-color: #ddd;
+    box-shadow: 0 5px 0 0 #888;
+}
+.tab {
+    text-decoration: none;
+}
+a.tab:hover {
+    text-decoration: none;
+}
+.tab.active {
+    background-color: #fff;
+}
+.btn-submit {
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #eee;
+}
