@@ -9,11 +9,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LoginController extends AbstractController
 {
-    public $users = [];
-    public $hasRead = false;
-    public $file = __DIR__ . "/../users.data";
     public function readUsers()
     {
+        $file = __DIR__ . "/../users.data";
         $handler = fopen($this->file, "a+");
         if (!$handler) {
             exit("the users.data can not read or create");
@@ -28,27 +26,21 @@ class LoginController extends AbstractController
         }
         fclose($handler);
         // parse string
+        if($content==="") {
+          return [];
+        }
         $arr = explode("\n", $content);
         $i = 0;
         while ($i < count($arr)) {
             $this->users[$arr[i]] = $arr[i + 1];
             $i += 2;
         }
-        $this->hasRead = true;
-    }
-    public function getUsers()
-    {
-        if (!$this->hasRead) {
-            $this->readUsers();
-        }
-
-        return $this->users;
+        return $arr;
     }
     public function writeUser($name, $pw)
     {
-        $us = $this->getUsers();
-        $us[$name] = $pw;
-        file_put_contents($this->file, "$name\n$pw\n", FILE_APPEND);
+        $file = __DIR__ . "/../users.data";
+        file_put_contents($file, "$name\n$pw\n", FILE_APPEND);
     }
     /**
      * @Route("/login", name="login")

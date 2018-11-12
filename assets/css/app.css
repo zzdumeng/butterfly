@@ -27,5 +27,30 @@ a.tab:hover {
 }
 .btn-submit {
     border-radius: 10px;
-    box-shadow: 3px 3px 3px #eee;
+    width: 80%;
+    border: none;
+    outline: none;
+    background-color: #303a2b;
+    box-shadow: 2px 4px 0px 1px #767a76cf;
+}
+.btn-submit:focus {
+  outline: none;
+}
+.btn-submit:active {
+
+    box-shadow: 2px 1px 0px 1px #767a76cf;
+}
+.btn-submit.disabled {
+  background-color: #555;
+  color: #888;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.error {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateY(-50%);
+  height: 2rem;
+  line-height: 2rem;
 }

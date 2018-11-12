@@ -1,20 +1,22 @@
 {% extends 'auth.html.twig' %}
 
 {% block form %}
+{% if error is defined %}
+<div class="error bg-light text-dark text-center">{{error}}</div>
+{% endif %}
 {{ parent() }}
-    login form
     <form action="./login" method="post" class="text-dark">
         <div class="form-group">
           <label for="name">用户名</label>
           <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
-          <small id="helpId" class="form-text text-muted">Help text</small>
+          {# <small id="helpId" class="form-text text-muted">Help text</small> #}
         </div>
         <div class="form-group">
           <label for="pw">密码</label>
           <input type="password" class="form-control" name="passowrd" id="pw" placeholder="password">
         </div>
         <div class="form-group text-center">
-           <button type="submit" class="btn btn-primary btn-submit">登陆</button>
+           <button id='login' type="submit" class=" disabled btn-submit py-1 text-light">登陆</button>
         </div>
     </form>
    

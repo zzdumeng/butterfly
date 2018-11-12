@@ -2,23 +2,19 @@
 
 {% block form %}
 {{ parent() }}
-    register form
     <form action="./register" method="post" class="text-dark">
     <div class="form-group">
       <label for="name">用户名</label>
       <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
-      <small id="helpId" class="form-text text-muted">Help text</small>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
       <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="">
-      <small id="emailHelpId" class="form-text text-muted">Help text</small>
     </div>
 
     <div class="form-group">
       <label for="qq">QQ</label>
       <input type="text" class="form-control" name="qq" id="qq" aria-describedby="emailHelpId" placeholder="">
-      <small id="emailHelpId" class="form-text text-muted">Help text</small>
     </div>
     <div class="form-group">
       <label for="pw">密码</label>
@@ -29,6 +25,8 @@
       <label for="pw-again">确认密码</label>
       <input type="password" class="form-control" name="passwordAgain" id="pw-again" placeholder="confirm password">
     </div>
-    <button type="submit" class="btn btn-primary btn-submit">同意协议并注册</button>
+    <div class="form-group text-center">
+      <button type="submit" class="disabled btn-submit text-light py-1">同意协议并注册</button>
+    </div>
     </form>
 {% endblock %}
