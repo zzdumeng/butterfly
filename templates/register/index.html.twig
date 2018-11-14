@@ -26,7 +26,12 @@
       <input type="password" class="form-control" name="passwordAgain" id="pw-again" placeholder="confirm password">
     </div>
     <div class="form-group text-center">
-      <button type="submit" class="disabled btn-submit text-light py-1">同意协议并注册</button>
+      <input id="register" type="submit" class="disabled btn-submit text-light py-1" value='同意协议并注册'>
     </div>
     </form>
+{% endblock %}
+
+{% block javascripts %}
+{{parent()}}
+{{ encore_entry_script_tags("register")}}
 {% endblock %}

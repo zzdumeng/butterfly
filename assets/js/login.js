@@ -13,7 +13,7 @@ let pwValid = false
 // may be neither efficient nor efficient.
 // consider a better ux experience. 
 
-nameEl.on('input', (e) => {
+nameEl.on('input', function(e) {
   const l = $(this).val().trim().length 
   if(l>=8 && l <= 16) {
     // length valid
@@ -28,7 +28,7 @@ nameEl.on('input', (e) => {
   }
 })
 
-pwEl.on('input', (e) => {
+pwEl.on('input', function(e) {
   const l = $(this).val().trim().length 
   if(l>6) {
     pwValid = true
@@ -42,7 +42,7 @@ pwEl.on('input', (e) => {
   }
 })
 
-submitEl.on('click', (e)=> {
+submitEl.on('click', function(e){
   // if(!nameRe.test(nameEl.val().trim()) ) {
   //   e.preventDefault()
   //   showHint('name')
